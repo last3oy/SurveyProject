@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.last3oy.surveyproject.R;
+import com.example.last3oy.surveyproject.activity.surveydetail.SurveyDetailContact;
 import com.example.last3oy.surveyproject.activity.surveydetail.view.SurveyDetailActivity;
 import com.example.last3oy.surveyproject.databinding.FragmentSurveyPageBinding;
 import com.example.last3oy.surveyproject.fragment.surveylist.SurveyPageContact;
@@ -19,7 +20,7 @@ import com.example.last3oy.surveyproject.model.Survey;
 import org.parceler.Parcels;
 
 
-public class SurveyPageFragment extends Fragment implements SurveyPageContact.View{
+public class SurveyPageFragment extends Fragment implements SurveyPageContact.View {
 
     public static final String SURVEY_KEY = "SURVEY_KEY";
 
@@ -53,7 +54,8 @@ public class SurveyPageFragment extends Fragment implements SurveyPageContact.Vi
                 .into(mBinding.ivBackground);
 
         mBinding.btnTakeSurvey.setOnClickListener(v -> {
-
+            Intent intent = new Intent(getActivity(), SurveyDetailActivity.class);
+            startActivity(intent);
         });
 
     }
