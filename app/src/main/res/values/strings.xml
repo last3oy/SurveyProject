@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SurveyProject</string>
+    <string name="btn_take_survey">Take the survey</string>
 </resources>
