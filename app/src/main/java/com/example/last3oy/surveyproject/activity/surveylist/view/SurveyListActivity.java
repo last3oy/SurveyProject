@@ -31,8 +31,8 @@ public class SurveyListActivity extends AppCompatActivity
         mPresenter = new SurveyListPresenter(this, new SurveyListInteractor());
 
         mAdapter = new SurveyListAdapter(getSupportFragmentManager());
-        mBinding.viewpager.setAdapter(mAdapter);
-        mBinding.indicator.setViewPager(mBinding.viewpager);
+        mBinding.vpSurveys.setAdapter(mAdapter);
+        mBinding.indicatorPage.setViewPager(mBinding.vpSurveys);
 
         mBinding.ivRefresh.setOnClickListener(v -> fetchSurvey());
 

@@ -11,7 +11,7 @@
 
 
         <com.example.last3oy.surveyproject.custom.view.VerticalViewPager
-            android:id="@+id/viewpager"
+            android:id="@+id/vpSurveys"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
 
 
         <com.viewpagerindicator.CirclePageIndicator
-            android:id="@+id/indicator"
+            android:id="@+id/indicatorPage"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -43,13 +43,13 @@
 
             <ImageView
                 android:id="@+id/ivRefresh"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginStart="@dimen/margin_padding"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="4dp"
+                android:padding="@dimen/margin_padding_small"
                 android:src="@drawable/ic_refresh" />
 
             <TextView
@@ -57,20 +57,19 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="surveys"
+                android:text="@string/toolbar_surveys"
                 android:textAllCaps="true"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="@dimen/text_size_large" />
 
             <ImageView
                 android:id="@+id/ivMenu"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginStart="@dimen/margin_padding"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="4dp"
+                android:padding="@dimen/margin_padding_small"
                 android:src="@drawable/ic_menu" />
 
 
@@ -78,14 +77,14 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/margin_padding"
+            android:layout_marginEnd="@dimen/margin_padding"
+            android:layout_marginStart="@dimen/margin_padding"
+            android:layout_marginTop="@dimen/margin_padding"
             android:indeterminate="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"

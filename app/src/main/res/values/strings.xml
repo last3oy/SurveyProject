@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SurveyProject</string>
     <string name="btn_take_survey">Take the survey</string>
+    <string name="toolbar_surveys">surveys</string>
 </resources>
