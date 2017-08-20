@@ -27,7 +27,7 @@ public class SurveyListActivityTest {
             new ActivityTestRule<>(SurveyListActivity.class);
 
     @Test
-    public void should_toolbarShow_when_openActivity() throws Exception {
+    public void should_viewShowCorrect_when_openActivity() throws Exception {
         onView(withId(R.id.llToolbar)).check(matches(isDisplayed()));
 
         onView(withId(R.id.tvTitle)).check(matches(isDisplayed()));
@@ -39,7 +39,7 @@ public class SurveyListActivityTest {
     }
 
     @Test
-    public void should_progressBarHide_when_openActivity() throws Exception {
+    public void should_titleIsSurvey_when_openActivity() throws Exception {
         onView(withId(R.id.tvTitle)).check(matches(withText(R.string.toolbar_surveys)));
     }
 
