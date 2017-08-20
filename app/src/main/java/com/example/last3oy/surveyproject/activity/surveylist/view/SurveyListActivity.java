@@ -45,7 +45,6 @@ public class SurveyListActivity extends AppCompatActivity
     }
 
     private void fetchSurvey() {
-        mBinding.progressBar.setVisibility(View.VISIBLE);
         mPresenter.fetchSurvey();
     }
 
@@ -57,6 +56,11 @@ public class SurveyListActivity extends AppCompatActivity
     @Override
     public void hideProgressBar() {
         mBinding.progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void showProgressBar() {
+        mBinding.progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override

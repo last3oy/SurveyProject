@@ -36,6 +36,8 @@ public class SurveyListPresenter implements SurveyListContact.Presenter {
 
     @Override
     public void fetchSurvey() {
+        mView.showProgressBar();
+
         if (mSubscription != null && !mSubscription.isDisposed()) {
             mSubscription.dispose();
         }
@@ -55,9 +57,10 @@ public class SurveyListPresenter implements SurveyListContact.Presenter {
     }
 
     private void handleError(Throwable throwable) {
+        mView.hideProgressBar();
         String errMsg = throwable.getMessage();
         Log.e(LOG_TAG, errMsg);
-        if (errMsg.contains(Constant.HTTP_UNAUTHORIZED)) {
+        if (errMsg != null && errMsg.contains(Constant.HTTP_UNAUTHORIZED)) {
             mInteractor.getFetchToken(Constant.GRANT_TPYE, Constant.USERNAME, Constant.PASSWORD)
                     .subscribe((surveyAccessToken, _throwable) -> {
                         if (surveyAccessToken != null) {
@@ -65,8 +68,6 @@ public class SurveyListPresenter implements SurveyListContact.Presenter {
                             fetchSurvey();
                         }
                     });
-        } else {
-            mView.hideProgressBar();
         }
     }
 

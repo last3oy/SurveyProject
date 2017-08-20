@@ -15,6 +15,8 @@ public interface SurveyListContact {
         void showSurveyList(List<Survey> surveys);
 
         void hideProgressBar();
+
+        void showProgressBar();
     }
 
     interface Presenter extends BasePresenter {
