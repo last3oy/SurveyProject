@@ -25,6 +25,16 @@ android {
     dataBinding {
         enabled = true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -40,6 +50,8 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.2'
     implementation 'org.parceler:parceler-api:1.1.9'
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.4.2'
     annotationProcessor 'org.parceler:parceler:1.1.9'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:1.10.19'
