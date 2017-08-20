@@ -1,4 +1,4 @@
-package com.example.last3oy.surveyproject.custom;
+package com.example.last3oy.surveyproject.custom.view;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
