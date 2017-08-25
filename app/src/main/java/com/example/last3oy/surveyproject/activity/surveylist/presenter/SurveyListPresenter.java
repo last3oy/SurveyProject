@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.last3oy.surveyproject.BuildConfig;
 import com.example.last3oy.surveyproject.model.Constant;
 import com.example.last3oy.surveyproject.activity.surveylist.SurveyListContact;
 import com.example.last3oy.surveyproject.model.Survey;
@@ -61,7 +62,7 @@ public class SurveyListPresenter implements SurveyListContact.Presenter {
         String errMsg = throwable.getMessage();
         Log.e(LOG_TAG, errMsg);
         if (errMsg != null && errMsg.contains(Constant.HTTP_UNAUTHORIZED)) {
-            mInteractor.getFetchToken(Constant.GRANT_TPYE, Constant.USERNAME, Constant.PASSWORD)
+            mInteractor.getFetchToken(BuildConfig.TOKEN_GRANT_TYPE, BuildConfig.TOKEN_USERNAME, BuildConfig.TOKEN_PASSWORD)
                     .subscribe((surveyAccessToken, _throwable) -> {
                         if (surveyAccessToken != null) {
                             mInteractor.putAccessToken(surveyAccessToken.getAccessToken());

@@ -1,5 +1,7 @@
 package com.example.last3oy.surveyproject.util.http;
 
+import com.example.last3oy.surveyproject.BuildConfig;
+
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -28,7 +30,7 @@ public class SurveyApiManager {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .client(client)
-                .baseUrl("https://nimbl3-survey-api.herokuapp.com")
+                .baseUrl(BuildConfig.SERVER_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build();

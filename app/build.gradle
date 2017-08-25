@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
 
+    def DIMENSION_TYPE_PRODUCT = "TYPE_PRODUCT"
+
     compileSdkVersion 26
 
     buildToolsVersion "26.0.1"
@@ -24,6 +26,32 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    flavorDimensions DIMENSION_TYPE_PRODUCT
+
+    productFlavors {
+
+        def SERVER_URL = "SERVER_URL"
+        def TOKEN_GRANT_TYPE = "TOKEN_GRANT_TYPE"
+        def TOKEN_USERNAME = "TOKEN_USERNAME"
+        def TOKEN_PASSWORD = "TOKEN_PASSWORD"
+
+        dev {
+            dimension DIMENSION_TYPE_PRODUCT
+            buildConfigField "String", SERVER_URL, "\"https://nimbl3-survey-api.herokuapp.com\""
+            buildConfigField "String", TOKEN_GRANT_TYPE, "\"password\""
+            buildConfigField "String", TOKEN_USERNAME, "\"carlos@nimbl3.com\""
+            buildConfigField "String", TOKEN_PASSWORD, "\"antikera\""
+        }
+
+        prod {
+            dimension DIMENSION_TYPE_PRODUCT
+            buildConfigField "String", SERVER_URL, "\"https://nimbl3-survey-api.herokuapp.com\""
+            buildConfigField "String", TOKEN_GRANT_TYPE, "\"password\""
+            buildConfigField "String", TOKEN_USERNAME, "\"carlos@nimbl3.com\""
+            buildConfigField "String", TOKEN_PASSWORD, "\"antikera\""
+        }
     }
 
     compileOptions {
